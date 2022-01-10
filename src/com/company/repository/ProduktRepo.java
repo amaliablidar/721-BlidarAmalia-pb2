@@ -1,6 +1,6 @@
 package com.company.repository;
 
-import com.company.Model.Produkt;
+import com.company.model.Produkt;
 
 import java.util.ArrayList;
 import java.util.List;

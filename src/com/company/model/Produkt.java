@@ -1,13 +1,13 @@
-package com.company.Model;
+package com.company.model;
 
 public class Produkt {
     Long id;
     String name;
-    float preis;
+    double preis;
     String SKU;
     int initialeAnzahl;
 
-    public Produkt(Long id,String name, float preis, String SKU, int initialeAnzahl) {
+    public Produkt(Long id,String name, double preis, String SKU, int initialeAnzahl) {
         this.id=id;
         this.name = name;
         this.preis = preis;
@@ -31,11 +31,11 @@ public class Produkt {
         this.name = name;
     }
 
-    public float getPreis() {
+    public double getPreis() {
         return preis;
     }
 
-    public void setPreis(float preis) {
+    public void setPreis(double preis) {
         this.preis = preis;
     }
 
