@@ -4,6 +4,7 @@ import com.company.Model.Produkt;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ProduktRepo implements CrudRepo<Produkt>{
     List<Produkt> produktList = new ArrayList<>();
@@ -11,11 +12,11 @@ public class ProduktRepo implements CrudRepo<Produkt>{
 
     @Override
     public Produkt findOne(Long id) {
-        return produktList.stream().filter(produkt -> produkt.getId()==id).findAny().orElse(null);
+        return produktList.stream().filter(produkt -> Objects.equals(produkt.getId(), id)).findAny().orElse(null);
     }
 
     @Override
-    public List findAll() {
+    public List<Produkt> findAll() {
         return this.produktList;
     }
 
@@ -40,7 +41,7 @@ public class ProduktRepo implements CrudRepo<Produkt>{
     @Override
     public Produkt update(Produkt entity) {
         for(Produkt produkt:produktList){
-            if(produkt.getId()==entity.getId()){
+            if(Objects.equals(produkt.getId(), entity.getId())){
                 produkt.setName(entity.getName());
                 produkt.setPreis(entity.getPreis());
                 produkt.setSKU(entity.getSKU());
